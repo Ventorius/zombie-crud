@@ -14,9 +14,10 @@ schedule.scheduleJob(rule, async () => {
   await Promise.all([setItems(), setExchangeRates()]);
 });
 
-app.listen(port, async () => {
-  await Promise.all([setItems(), setExchangeRates()]);
-  console.info(`server started on port ${port} (${env})`);
+Promise.all([setItems(), setExchangeRates()]).then(() => {
+  app.listen(port, () => {
+    console.info(`server started on port ${port} (${env})`);
+  });
 });
 
 module.exports = app;

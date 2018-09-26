@@ -16,6 +16,7 @@ const zombieSchema = new mongoose.Schema({
   items: {
     type: [Number],
     validate: [itemsArrayLimit, '{PATH} exceeds the limit of 5'],
+    default: [],
   },
 }, {
   timestamps: true,

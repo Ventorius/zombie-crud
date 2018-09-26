@@ -10,5 +10,7 @@ module.exports = {
   port: process.env.PORT,
   mongo: {
     uri: process.env.MONGO_URI,
+    testUri: process.env.MONGO_URI_TEST,
+    devUri: process.env.MONGO_URI_PROD,
   },
 };

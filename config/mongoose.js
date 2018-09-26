@@ -12,8 +12,25 @@ if (env === 'development') {
   mongoose.set('debug', true);
 }
 
+let mongoUri;
+
+switch (process.env.NODE_ENV) {
+  case 'dev':
+    mongoUri = mongo.devUri;
+    break;
+  case 'prod':
+    mongoUri = mongo.uri;
+    break;
+  case 'test':
+    mongoUri = mongo.testUri;
+    break;
+  default:
+    mongoUri = mongo.devUri;
+    break;
+}
+
 exports.connect = () => {
-  mongoose.connect(mongo.uri, {
+  mongoose.connect(mongoUri, {
     keepAlive: 1,
     useNewUrlParser: true,
   });
