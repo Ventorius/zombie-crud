@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "apidoc": "^0.17.6",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cross-env": "^5.2.0",
@@ -30,6 +31,11 @@
     "start": "cross-env NODE_ENV=prod node index.js",
     "dev": "cross-env NODE_ENV=dev nodemon index.js",
     "lint": "eslint",
-    "test": "cross-env NODE_ENV=test --reporter=text mocha --timeout 20000 --recursive api/tests"
+    "test": "cross-env NODE_ENV=test --reporter=text mocha --timeout 20000 --recursive api/tests",
+    "docs": "apidoc -i api -o docs",
+    "postdocs": "opn docs/index.html"
+  },
+  "apidoc": {
+    "title": "Zombie"
   }
 }
