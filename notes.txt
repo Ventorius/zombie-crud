@@ -1,0 +1,35 @@
+Będziemy tworzyć naszego zombiaka, którego wyposażymy w drogocenny ekwipunek.
+
+W tym celu potrzebujemy kilku endpointów:
+
+1. CRUD dla zombi
+2. CRUD dla itemów naszej postaci
+
+Założenia:
+
+- zombi może mieć maksymalnie 5 itemów
+- korzystamy z zewnętrznej giełdy itemów dla naszego zombi ( za każdy request płacimy - może jakiś cache?),
+ ceny itemów na giełdzie odświeżane są codziennie o godzinie 00:00 UTC oraz podane są w polskich złotówkach.
+  https://zombie-items-api.herokuapp.com/api/items
+- używamy api NBP do pobierania dziennego kursu walut http://api.nbp.pl/api/exchangerates/tables/C/today/
+
+Co chcemy osiągnąć?
+
+Tworzymy wizytówke naszego zombiaka, człowiek od frontu juz wszystko zakodził i czeka na API z dokumentacja.
+
+Na wizytówce musimy wyświetlić:
+
+- nazwe zombiaka
+- date utworzenia
+- liste itemów
+- łączna wartość itemów w 3 walutach, PLN/EU/USD - wartości wyliczane na backendzie
+- apke trzeba umieścic na hostingu, może być heroku/zeit lub cokolwiek innego
+
+Co jest ważne?
+
+- dobra dokumentacja
+- test coverage
+- optymalność
+- czystość kodu
+
+Całość wrzuć na dowolne repozytorium i podeślij nam link zarówno do niego jak i do aplikacji.
