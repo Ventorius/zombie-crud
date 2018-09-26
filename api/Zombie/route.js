@@ -30,7 +30,7 @@ router
    * @apiGroup Zombies
    *
    * @apiParam  {String}             name     Zombie's name
-   * @apiParam  {Array}             [items]     Zombie's items
+   * @apiParam  {Array}             [items]     Zombie's items in form of id's, maximum 5 of these
    *
    * @apiSuccess (Created 201) {String}  id         Zombie's id
    * @apiSuccess (Created 201) {String}  name       Zombie's name
